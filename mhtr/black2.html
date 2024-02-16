@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+
+<TITLE>Untitled</TITLE>
+
+<META NAME="generator" CONTENT="BBEdit 4.5">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--//
+
+function overImg(imgName)
+	{
+	}
+
+function offImg(imgName)
+	{
+	}
+
+//-->
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript1.1">
+<!--//
+
+	bak = new Image (13,13);
+	bak.src = "images/toggle_off.gif";
+	bakOn = new Image (13,13);
+	bakOn.src = "images/toggle_on.gif";
+	fwd = new Image (13,13);
+	fwd.src = "images/toggle_off.gif";
+	fwdOn = new Image (13,13);
+	fwdOn.src = "images/toggle_on.gif";
+
+	window.onerror = null;
+
+function overImg(imgName)
+	{
+       imgOn = eval(imgName + "On.src");
+      	document [imgName].src = imgOn;
+     }
+
+function offImg(imgName)
+	{
+        imgOff = eval(imgName + ".src");
+        document [imgName].src = imgOff;
+    }
+
+//-->
+</SCRIPT>
+
+</HEAD>
+<BODY BGCOLOR="#000000" MARGINWIDTH="0" MARGINHEIGHT="0">
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" HEIGHT="100%">
+	<TR>
+		<TD>
+			<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" HEIGHT="396">
+				<TR>
+					<TD VALIGN="BOTTOM">
+						<A TARGET="contents" ONMOUSEOVER="overImg('fwd'); window.status='warp66'; return true"
+						ONMOUSEOUT="offImg('fwd')" HREF="../WARP66/"><IMG NAME="fwd" SRC="images/toggle_off.gif"
+						WIDTH="13" HEIGHT="13" BORDER="0" HSPACE="5" VSPACE="5"></A><BR>
+						<A TARGET="contents" ONMOUSEOVER="overImg('bak'); window.status='warp54'; return true"
+						ONMOUSEOUT="offImg('bak')" HREF="../WARP54/"><IMG NAME="bak" SRC="images/toggle_off.gif"
+						WIDTH="13" HEIGHT="13" BORDER="0" HSPACE="5" VSPACE="0"></A><BR>
+					</TD>
+				</TR>
+			</TABLE>
+		</TD>
+	</TR>
+</TABLE>
+</BODY>
+</HTML>
