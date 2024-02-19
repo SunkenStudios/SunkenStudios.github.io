@@ -1,0 +1,14 @@
+[
+    {
+        "pageName" : "Boards of Canada EHX",
+        "pageDescription" : "A full archive of the BOC EHX website, without the .realaudio files.",
+        "thumb" : "./ehx.png",
+        "directory" : "./ehx/index.html"
+    },
+    {
+        "pageName" : "Music Has the Right Microsite",
+        "pageDescription" : "A full archive of the BOC MHTRTC Microsite website, including the .realaudio files.",
+        "thumb" : "./mhtr.png",
+        "directory" : "./mhtr/index.html"
+    }
+]
