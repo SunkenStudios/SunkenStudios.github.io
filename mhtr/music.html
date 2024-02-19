@@ -45,6 +45,8 @@
         if (e.target.src.substring(e.target.src.lastIndexOf('/')+1).includes("gif")) return;
     var filename = e.target.src.substring(e.target.src.lastIndexOf('/')+1).replace(/\.[^/.]+$/, "");
      playAudioAtIndex(parseInt(filename) - 1);}
+
+playAudioAtIndex(0);
     </script>
 
 

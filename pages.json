@@ -10,5 +10,11 @@
         "pageDescription" : "A full archive of the BOC MHTRTC Microsite website, including the .realaudio files.",
         "thumb" : "./mhtr.png",
         "directory" : "./mhtr/index.html"
+    },
+    {
+        "pageName" : "Chipper and Sons",
+        "pageDescription" : "A HTML5 port of the classic \"Chipper and Sons\" by Scott Cawthon.",
+        "thumb" : "./chipper.png",
+        "directory" : "./chipper/index.html"
     }
 ]
