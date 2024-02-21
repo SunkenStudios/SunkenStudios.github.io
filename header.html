@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Header</title>
+<style>
+.header {
+  background-color: rgba(2, 4, 5,0.5);
+  padding: 0px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.header:hover {
+  opacity: 1;
+}
+
+.logo {
+  font-family: Verdana, sans-serif;
+  font-size: 1.2em;
+  margin-left: 5px;
+  font-weight: bold;
+  color: rgb(255,255,255);
+}
+
+.button {
+  font-family: Verdana, sans-serif;
+  font-weight: bold;
+  padding: 8px 16px;
+  background-color: rgba(0,0,0,0.2);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">sunkenstudios.github.io</div>
+  <a href="/index.html" class="button">Home</a>
+</div>
+
+<!-- Other content of your page goes here -->
+
+</body>
+</html>
