@@ -1,7 +1,7 @@
 [
     {
         "pageName" : "Boards of Canada EHX",
-        "pageDescription" : "A full archive of the BOC EHX website, without the .realaudio files.",
+        "pageDescription" : "A full archive of the BOC EHX website, without the .realaudio files." ,
         "thumb" : "./ehx.png",
         "directory" : "./ehx/index.html"
     },
@@ -16,5 +16,11 @@
         "pageDescription" : "A HTML5 port of the classic \"Chipper and Sons\" by Scott Cawthon.",
         "thumb" : "./chipper.png",
         "directory" : "./chipper/index.html"
+    },
+    {
+        "pageName" : "Five Nights at Chuck E Cheese's",
+        "pageDescription" : "A HTML5 port of the classic Five Nights at Freddy's fangame \"Five Nights at Chuck E Cheese's\" by jollytea.",
+        "thumb" : "./fnacec.png",
+        "directory" : "./fnacec/index.html"
     }
 ]
