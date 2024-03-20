@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yesteryear - Sounds</title>
+<style>
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+  }
+  .sounds {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+  }
+  .sound-item {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 30px;
+  }
+  .sound-icon {
+    width: 70px;
+    height: 70px;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .sound-name {
+    color: white;
+  }
+</style>
+</head>
+<body text="#000000" link="#000000" vlink="#000000" alink="#000000" bgproperties="fixed" background="images/background.png">
+
+<a href = "index.html"><img src="images/sounds.png" class="sounds" height=150 width=400></a>
+
+<div id="sound-list" class="center"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    let currentAudio = null; 
+    fetch('sounds.json')
+      .then(response => response.json())
+      .then(data => {
+        const soundList = document.getElementById('sound-list');
+        let alternatePosition = false;
+
+        data.sounds.forEach(sound => {
+          const soundItem = document.createElement('div');
+          soundItem.classList.add('sound-item');
+          
+          if (alternatePosition) {
+            soundItem.style.flexDirection = 'row-reverse';
+          }
+          alternatePosition = !alternatePosition;
+
+          const soundIcon = document.createElement('img');
+          soundIcon.classList.add('sound-icon');
+          soundIcon.src = sound.icon;
+          soundIcon.alt = sound.name;
+          soundIcon.onclick = function() {
+            if (currentAudio) {
+              currentAudio.pause(); // Pause the currently playing audio
+            }
+            currentAudio = new Audio(sound.audio);
+            currentAudio.play();
+          };
+
+          const soundName = document.createElement('span');
+          soundName.classList.add('sound-name'); 
+          soundName.textContent = sound.name;
+
+          soundItem.appendChild(soundIcon);
+          soundItem.appendChild(soundName);
+
+          soundList.appendChild(soundItem);
+        });
+      })
+      .catch(error => console.error('Error fetching sounds.json:', error));
+  });
+</script>
+</body>
+</html>

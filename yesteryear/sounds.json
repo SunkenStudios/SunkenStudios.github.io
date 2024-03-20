@@ -1,0 +1,30 @@
+{
+    "sounds": [
+      {
+        "name": "aeolian",
+        "icon": "images/aeolian.png",
+        "audio": "sounds/aeolian.ogg"
+      },
+      {
+        "name": "twill",
+        "icon": "images/aeolian.png",
+        "audio": "sounds/twill.ogg"
+      },
+      {
+        "name": "evanesce",
+        "icon": "images/aeolian.png",
+        "audio": "sounds/evanesce.ogg"
+      },
+      {
+        "name": "nitrometer",
+        "icon": "images/nitrometer.png",
+        "audio": "sounds/nitrometer.ogg"
+      },
+      {
+        "name": "forbis",
+        "icon": "images/asothing.png",
+        "audio": "sounds/forbis.ogg"
+      }
+    ]
+  }
+  

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yesteryear - Pictures</title>
+<style>
+  .center {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    width: 75%;
+    height: 200px;
+  }
+  .picture {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+  }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+}
+  .picture-icon {
+    height: 100%; 
+    width: 100%; 
+    object-fit: contain;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body text="#000000" link="#000000" vlink="#000000" alink="#000000" bgproperties="fixed" background="images/background.png">
+
+<a href = "index.html"><img src="images/pictures.png" class="picture" height=150 width=400></a>
+
+<p id="sound-list" class="center"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const pageid = parseInt(urlParams.get('page')) || 0
+    console.log(pageid)
+    let currentAudio = null; 
+    fetch('pictures' +  pageid +  '.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        const soundList = document.getElementById('sound-list');
+
+        data.pictures.forEach(sound => {
+          const soundItem = document.createElement('div');
+          soundItem.classList.add('picture-item');
+
+          const soundIcon = document.createElement('img');
+          soundIcon.classList.add('picture-icon');
+          soundIcon.src = sound.img;
+          soundIcon.addEventListener('click', function() {
+              window.location.href = 'pictures.html?page=' + (pageid + 1);
+          });
+          
+          soundItem.appendChild(soundIcon);
+          soundList.appendChild(soundItem);
+        });
+      })
+      .catch(error => window.location.href = "index.html");
+  });
+</script>
+</body>
+</html>
