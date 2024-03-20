@@ -12,9 +12,9 @@
         "directory" : "./mhtr/index.html"
     },
     {
-        "pageName" : "Yesteryear Site",
+        "pageName" : "Yesteryear",
         "pageDescription" : "A little side project of mine.",
-        "thumb" : "./yesteryear.png",
+        "thumb" : "./yester.png",
         "directory" : "./yesteryear/index.html"
     },
     {
