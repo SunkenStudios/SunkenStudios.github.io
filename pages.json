@@ -13,7 +13,7 @@
     },
     {
         "pageName" : "Yesteryear",
-        "pageDescription" : "A little side project of mine.",
+        "pageDescription" : "My musical alias",
         "thumb" : "./yester.png",
         "directory" : "./yesteryear/index.html"
     },
