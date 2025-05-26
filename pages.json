@@ -12,12 +12,6 @@
         "directory" : "./mhtr/index.html"
     },
     {
-        "pageName" : "Yesteryear",
-        "pageDescription" : "My musical alias",
-        "thumb" : "./yester.png",
-        "directory" : "./yesteryear/index.html"
-    },
-    {
         "pageName" : "Chipper and Sons",
         "pageDescription" : "A HTML5 port of the classic \"Chipper and Sons\" by Scott Cawthon.",
         "thumb" : "./chipper.png",
