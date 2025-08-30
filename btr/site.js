@@ -7,7 +7,7 @@ async function fetchVersions() {
             throw new Error('Failed to fetch versions.json');
         }
         versionData = await response.json();
-        if (window.location.href.includes('versions.html')){
+        if (window.location.href.includes('versions.html')) {
             createVersionSections(versionData.versions);
         }
     } catch (error) {
@@ -25,46 +25,47 @@ function createVersionSections(versions) {
         section.className = 'mid three_col social version';
         section.id = 'version';
 
-        // Title row with version and download button
+        // Title row with version name
         const h2 = document.createElement('h2');
-        const h3 = document.createElement('h1');
-
-        const versionLink = document.createElement('a');
-        versionLink.textContent = `Version ${v.version}`;
-
-        const downloadLink = document.createElement('a');
-        downloadLink.className = 'button button_download_version';
-        downloadLink.textContent = 'Download now';
-        downloadLink.onclick = () => downloadVersion(v.version);
-
-        h2.appendChild(versionLink);
-        h3.appendChild(downloadLink);
-        h2.appendChild(h3);
+        h2.textContent = `Version ${v.version}`;
 
         // Description
         const p = document.createElement('p');
         p.textContent = v.description;
-        
+
+        // Download links (side by side, clickable text)
+        const downloads = document.createElement('p');
+        downloads.innerHTML = `
+            <a style="cursor: pointer; margin-right: 20px;" onclick="downloadVersion('${v.version}', 'client')">Download Client</a>
+            <a style="cursor: pointer;" onclick="downloadVersion('${v.version}', 'server')">Download Server</a>
+        `;
+
         // Append everything
         section.appendChild(h2);
         section.appendChild(p);
+        section.appendChild(downloads);
         mainDiv.appendChild(section);
     });
 }
 
 fetchVersions();
 
-function downloadVersion(version) {
+function downloadVersion(version, type) {
     for (var i = 0; i < versionData.versions.length; i++) {
         if (versionData.versions[i].version === version) {
-            var downloadUrl = versionData.versions[i].download;
-            window.location.href = downloadUrl;
+            let v = versionData.versions[i];
+            let downloadUrl = (type === "client") ? v.download : v.downloadServer;
+            if (downloadUrl) {
+                window.location.href = downloadUrl;
+            } else {
+                alert(`No ${type} download available for version ${version}`);
+            }
             return;
         }
     }
 }
 
-function downloadLatest() {
+function downloadLatest(type = "client") {
     var latestVersion = versionData.latest;
-    downloadVersion(latestVersion);
+    downloadVersion(latestVersion, type);
 }

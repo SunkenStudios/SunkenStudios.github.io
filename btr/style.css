@@ -31,7 +31,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
 input, select { vertical-align: middle; }
 
-body { background:#111; font:13px/1.4 'Helvetica Neue', sans-serif; *font-size:small; }
+body { background:#111; font:13px/1.4 'Helvetica Neue', sans-serif; *font-size:small{} }
 select, input, textarea, button { font:99% sans-serif; }
 pre, code, kbd, samp, .code { font-family: monospace, sans-serif; }
 
@@ -123,6 +123,7 @@ body:before {
 
 header {
     height: 48px;
+    width: 100vw;
     background: #211710 url("assets/img/bg_top.png");
 }
 
@@ -168,7 +169,7 @@ p.error,
     width: 415px;
     margin-top:0;
     float: left;
-    margin-left: ;
+    margin-left: 0px;
 }
 
 #menu li {
@@ -377,7 +378,7 @@ section.social h2 {
     padding-left:40px;
     background-repeat: no-repeat;
     padding-top:3px;
-    height:29px;
+    height:32px;
     margin-bottom: 1em;
 }
 
@@ -397,7 +398,7 @@ section.social#version h2 {
     margin-top: -10px;
 }
 section.social#version p {
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 #animals {
